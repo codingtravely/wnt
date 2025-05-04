@@ -14,12 +14,68 @@ body {
   background: var(--light) !important;
   font-family: "Gill Sans", sans-serif;
 }
+/* =================animate css starts here================= */
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 30px, 0);
+    transform: translate3d(0, 30px, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 30px, 0);
+    transform: translate3d(0, 30px, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
+/* =================animate css ends here================= */
 
 .nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
 
   margin: 0;
   padding: 0;
@@ -77,6 +133,8 @@ section {
   min-height: 250px;
   width: 80%;
   margin: auto;
+  opacity: 1;
+  transition: all 0.5s;
 }
 section p {
   color: #555;
@@ -117,26 +175,27 @@ footer {
 
 .card {
   overflow: hidden;
+  height: 350px !important;
 }
-.card img {
-  transition: 0.5s;
-  opacity: 0.9;
+.card img,
+.img-top {
+  transition: 0.7s;
+  opacity: 0.95;
 }
-.card img:hover {
-  transform: scale(110%);
+.card img:hover,
+.img-top:hover {
+  transform: scale(105%);
   opacity: 1;
 }
+
 @media (max-width: 650px) {
   nav ul li a {
-    display: block;
-    padding: 5px 15px;
+    padding: 5px 10px;
+    font-size: 0.8rem;
   }
   .logo-container {
     margin: 5px;
     width: 130px;
-  }
-  nav ul li {
-    font-size: 0.9rem;
   }
 
   section {
@@ -144,7 +203,19 @@ footer {
     padding-top: 40px;
   }
   section h2 {
-    font-size: 1.5em;
+    font-size: 1.7em;
+  }
+}
+@media (max-width: 450px) {
+  nav ul li a {
+    padding: 5px 6px;
+    font-size: 0.7rem;
+  }
+  section h2 {
+    font-size: 1.4em;
+  }
+  section p {
+    font-size: 14px;
   }
 }
 .social-link img {
