@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="style.css" />
     <link href="includes\bootstrap.min.css" rel="stylesheet" />
   </head>
-  <body>
+  <body class="fixed">
     <nav
       class="navbar navbar-expand-lg navmain"
       data-bs-theme="dark"
@@ -64,7 +64,7 @@
     <!-- fddhghsdhsh -->
 
     <main>
-      <section id="about">
+      <section id="about" class="animate">
         <div class="row justify-content-center align-items-center">
           <div class="col-md-6">
             <h2 class="my-3">About</h2>
@@ -95,7 +95,7 @@
           </div>
         </div>
       </section>
-      <section id="why-choose">
+      <section id="why-choose" class="animate">
         <center class="mb-3"><h2>Why choose us</h2></center>
         <div class="row">
           <div class="col-md-8">
@@ -125,7 +125,7 @@
           </div>
         </div>
       </section>
-      <section id="services">
+      <section id="services" class="animate">
         <center class="mb-2"><h2>Services</h2></center>
         <div
           class="row justify-content-center align-items-center gap-4 mt-4 mb-5">
@@ -150,7 +150,9 @@
               <div class="card-body">
                 <h5 class="card-title">Mobile App Development</h5>
                 <p class="card-text">
-                  Creating an app involves several key steps, starting with ideation and market research, followed by designing the user experience and interface, ...
+                  Creating an app involves several key steps, starting with
+                  ideation and market research, followed by designing the user
+                  experience and interface, ...
                 </p>
               </div>
             </div>
@@ -164,8 +166,9 @@
               <div class="card-body">
                 <h5 class="card-title">SEO & Digital Marketing</h5>
                 <p class="card-text">
-                  SEO, or Search Engine Optimization, is a crucial component of digital marketing that focuses on improving a website's visibility ...
-                  
+                  SEO, or Search Engine Optimization, is a crucial component of
+                  digital marketing that focuses on improving a website's
+                  visibility ...
                 </p>
               </div>
             </div>
@@ -177,7 +180,8 @@
               <div class="card-body">
                 <h5 class="card-title">Corporate Training</h5>
                 <p class="card-text">
-                  Corporate training refers to structured learning programs designed to enhance employees' skills, knowledge...
+                  Corporate training refers to structured learning programs
+                  designed to enhance employees' skills, knowledge...
                 </p>
               </div>
             </div>
@@ -239,5 +243,27 @@
     </footer>
     <script src="includes\bootstrap.min.js"></script>
     <script src="includes/jquery-3.7.1.min.js"></script>
+    <!-- animation script start -->
+    <script>
+      $(document).ready(function () {
+        $("section").first().css("opacity", 1);
+        $("section").last().css("opacity", 1);
+
+        $(window).on("scroll", function (e) {
+          $(".animate").each(function () {
+            let scroll = window.scrollY;
+            var screenRelativeTop = $(this).offset().top;
+
+            if (screenRelativeTop <= scroll + 200) {
+              $(this).addClass("animated").addClass("fadeInUp");
+            }
+            if (scroll == 0) {
+              $(this).removeClass("animated").removeClass("fadeInUp");
+            }
+          });
+        });
+      });
+    </script>
+    <!-- animation script end -->
   </body>
 </html>
